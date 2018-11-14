@@ -28,34 +28,34 @@ Now you need to create an Azure Automation Account.
 
 Click on "All services" then type "auto" and choose "Automation Account"
 
-![open automation account](imgs/01.jpg)
+![open automation account](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/01.jpg)
 
 Click "Add"
-![add an automation account](imgs/02.jpg)
+![add an automation account](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/02.jpg)
 
 Choose a name, a subscription, Resrouce Group, Location and the Run As account has to be set to "Yes"
-![create an automation account](imgs/03.jpg)
+![create an automation account](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/03.jpg)
 
 You may need to hit "Refresh"
-![Refresh](imgs/04.jpg)
+![Refresh](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/04.jpg)
 
 Click to open the new Automation Account
-![open the automation account](imgs/05.jpg)
+![open the automation account](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/05.jpg)
 
 Click on Modules Gallery on the left, search for "AzureAD" click on it and import it. You need to do the same for "MSOnline" module as well.
-![import modules](imgs/06.jpg)
+![import modules](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/06.jpg)
 
 Now go back to your Automation Account, click on "Credentials" and then "Add a credential"
-![Add the user account to the automation account](imgs/07.jpg)
+![Add the user account to the automation account](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/07.jpg)
 
 Here you will need to add the user account that you have created above, and type the password you have created above 2 times. Also make sure to note the Name and the Username as you will need to add them to the script.
-![Add the user account to the automation account](imgs/08.jpg)
+![Add the user account to the automation account](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/08.jpg)
 
 Once done, go to "Runbooks" and click to add a new Runbook, that will be our code.
-![click runbooks](imgs/09.jpg)
+![click runbooks](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/09.jpg)
 
 Click "Quick Create", choose a name and "Powershell" as the type and then click create.
-![create a runbook](imgs/10.jpg)
+![create a runbook](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/10.jpg)
 
 Now you need to past the code, however make sure to change the line in red (see screen shot)
     1 - This is the group ID we have created above
@@ -67,14 +67,14 @@ Now you need to past the code, however make sure to change the line in red (see 
             $usersList = (Get-AzureRmRoleAssignment -IncludeClassicAdministrators -scope $substring | Where-Object {$_.RoleDefinitionName -like "*AccountAdministrator*" -or $_.RoleDefinitionName -like "owner" -or $_.RoleDefinitionName -like "*ServiceAdministrator*")
             ```
     4 - Here is the username of the user running the script (not the name)
-![code part](imgs/11.jpg)
+![code part](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/11.jpg)
 
 
 Then press "Save" then "Publish"
-![save and publish](imgs/12.jpg)
+![save and publish](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/12.jpg)
 
 Now you can press Start to test it, then go to Jobs to check it. You can schdule it also if needed.
-![start and test](imgs/13.jpg)
+![start and test](https://github.com/msghaleb/azure-automation-add-subs-owners-to-group/raw/master/imgs/13.jpg)
 
 
 Best of Luck
