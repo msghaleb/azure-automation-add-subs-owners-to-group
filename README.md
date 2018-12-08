@@ -69,13 +69,19 @@ Click "Quick Create", choose a name and "Powershell" as the type and then click 
 
 Now you need to past the code, however make sure to change the line in red (see screen shot)
 1.This is the group ID we have created above
+
 2.Here you need to add the "Name" (not the username) of the user to run the script
+
 3.This command will pull all subscriptions owners, ..etc. you need to edit this if you need other roles (e.g. only Readers?)
+
 ...If you need all members you can leave this as is.
+
 ...If you need only owners you need to change this to be:
+
        ```
        $usersList = (Get-AzureRmRoleAssignment -IncludeClassicAdministrators -scope $substring | Where-Object {$_.RoleDefinitionName -like "*AccountAdministrator*" -or $_.RoleDefinitionName -like "owner" -or $_.RoleDefinitionName -like "*ServiceAdministrator*")
        ```
+       
 4. Here is the username of the user running the script (not the name)
     
 ![code part](images/11.JPG)
@@ -91,6 +97,7 @@ Now you can press Start to test it, then go to Jobs to check it. You can schdule
 
 
 Many thanks to Esmaeil and his article which was the source for this repo: http://en.gravatar.com/esarabadani
+
 Best of Luck
 
 MoGa
