@@ -68,6 +68,7 @@ Click "Quick Create", choose a name and "Powershell" as the type and then click 
 ![create a runbook](images/10.JPG)
 
 Now you need to past the code, however make sure to change the line in red (see screen shot)
+
 1.This is the group ID we have created above
 
 2.Here you need to add the "Name" (not the username) of the user to run the script
