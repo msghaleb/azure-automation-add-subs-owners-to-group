@@ -85,7 +85,7 @@ Now you need to past the code, however make sure to change the line in red (see 
        
 4. Here is the username of the user running the script (not the name)
     
-![code part](images/11.JPG)
+![code part](images/11_2.JPG)
 
 
 Then press "Save" then "Publish"
